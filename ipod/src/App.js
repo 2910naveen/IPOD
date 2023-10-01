@@ -11,7 +11,21 @@ import movie96 from './images/96Movie.jpg';
 import aravindhaSametha from './images/aravinda-sametha-veera-raghava.jpg';
 import bhadra from './images/Bhadra.jpg';
 import tholiprema from './images/tholiprema.jpg';
+import ReactAudioPlayer from 'react-audio-player';
+import Allasanivari from './songs/allasanivari.mp3';
 
+const AudioPlayer = ({ src }) => {
+  return (
+    <div>
+      <ReactAudioPlayer
+        src={src}
+        autoPlay={false}
+        controls
+        style={{backgroundColor:'red'}}
+      />
+    </div>
+  );
+};
 
 const MenuItem = ({ label,selectedOption }) => {
 
@@ -54,7 +68,7 @@ const Games = () => {
 
 const CoverPage = () => {
   return <div style={{width: "100%",height: "100%",display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column'}}>
-         <img src={coverpage} alt={"coverPage"} style={{backgroundColor:'white',color:'black',backgroundPosition:'center',backgroundRepeat:'no-repeat',backgroundSize:'cover',width: "100%",height: "100%",borderRadius:'30px'}}></img>
+         <img src={coverpage} alt={"coverPage"} style={{backgroundColor:'white',color:'black',backgroundPosition:'center',backgroundRepeat:'no-repeat',backgroundSize:'cover',width: "60%",height: "60%",borderRadius:'30px'}}></img>
          </div>
 };
 
@@ -92,18 +106,19 @@ const Album = () => {
                    <p>Music Director: Thaman.S</p>
                </div>
           </div>
-          <div style={{width:'90%',height:"10px",margin:'0px 15px 0px 15px',display:'flex',flexDirection:'row',border:'1px solid red'}}>
-            <div style={{backgroundColor:'white',width:'30%',height:'100%'}}>
+          {/* <div style={{width:'90%',height:"10px",margin:'0px 15px 0px 15px',display:'flex',flexDirection:'row',border:'1px solid red'}}> */}
+            {/* <div style={{backgroundColor:'white',width:'30%',height:'100%'}}>
 
             </div>
             <div style={{backgroundColor:'grey',width:'100%',height:'100%',flex:1}}>
 
-            </div>
-          </div>
-          <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',margin:'0px 15px 0px 15px'}}>
+            </div> */}
+          {/* </div> */}
+          {/* <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',margin:'0px 15px 0px 15px'}}>
             <div>0.00</div>
             <div>3.92</div>
-          </div>
+          </div> */}
+          <center><AudioPlayer src={Allasanivari}/></center>
           </div>
 };
 
